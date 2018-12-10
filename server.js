@@ -24,7 +24,7 @@ app.use((req,res,next)=>
   console.log("unable to append");
 }
 });
-  console.log(log);
+  //console.log(log);
 next();
 });
 
@@ -48,7 +48,11 @@ app.get('/bad',(req,res)=>
 {
   res.send({
     error : "badmessage"
-  })
+  });
+});
+app.get('/projects',(req,res)=>
+{//console.log("hello this is a project page");
+  res.render("projects.hbs",{pagetitle : "this is a project page"});
 });
 app.listen(port,()=>
 {
